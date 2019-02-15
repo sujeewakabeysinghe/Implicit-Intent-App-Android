@@ -63,10 +63,8 @@ public class MainActivity extends AppCompatActivity {
 
                 String address=et2.getText().toString().trim();
 
-                Uri gmmIntentUri = Uri.parse("google.navigation:q=Taronga+Zoo,+Sydney+Australia&avoid=tf");
-                Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
-                mapIntent.setPackage("com.google.android.apps.maps");
-                startActivity(mapIntent);
+                Intent in=new Intent(Intent.ACTION_VIEW, Uri.parse("geo:0,0?q="+address));
+                startActivity(in);
 
             }
         });
